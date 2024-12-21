@@ -1,0 +1,49 @@
+.container {
+  background: linear-gradient(0deg, #121212, #121212),
+    linear-gradient(0deg, #171923, #171923),
+    linear-gradient(0deg, #171923, #171923);
+  height: 100vh;
+  width: 100vw;
+  color: white;
+}
+
+.navContainer {
+  max-width: 90vw;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 0;
+  padding-top: 40px;
+}
+.logoContainer {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.navBtnContainer {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.signin {
+  border: 1px solid #7ea6ff;
+  color: #7ea6ff;
+  border-radius: 6px;
+  padding: 6px 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.createForm {
+  background: #1a5fff;
+  box-shadow: 0px 1px 0px 0px #ffffff33 inset;
+  border-radius: 6px;
+  padding: 7px 17px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
