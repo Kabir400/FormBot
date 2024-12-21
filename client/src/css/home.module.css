@@ -2,19 +2,19 @@
   background: linear-gradient(0deg, #121212, #121212),
     linear-gradient(0deg, #171923, #171923),
     linear-gradient(0deg, #171923, #171923);
-  height: 100vh;
+  height: 100%;
   width: 100vw;
   color: white;
 }
 
+/* home nav section */
 .navContainer {
   max-width: 90vw;
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 15px 0;
-  padding-top: 40px;
+  padding-top: 30px;
 }
 .logoContainer {
   display: flex;
@@ -35,7 +35,11 @@
   padding: 6px 14px;
   font-weight: 500;
   cursor: pointer;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.3s ease;
+}
+.signin:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px 2px #7ea6ff;
 }
 
 .createForm {
@@ -45,5 +49,159 @@
   padding: 7px 17px;
   font-weight: 500;
   cursor: pointer;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.3s ease-in;
+}
+.createForm:hover {
+  background: #1549cc;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  transform: scale(1.01);
+}
+
+/* Hero section*/
+
+.heroContainer {
+  max-width: 670px;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.heroHeading {
+  font-family: "Outfit", sans-serif;
+  background: linear-gradient(90deg, #4b83ff 0%, #b794f4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 55px;
+}
+
+.heroText {
+  color: #ffffffeb;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+}
+.heroBtn {
+  border-radius: 6px;
+  background: #1a5fff;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  cursor: pointer;
+  width: 257px;
+  align-self: center;
+  font-size: "Open Sans", sans-serif;
+  padding: 14px 10px;
+  transition: all 0.3s ease;
+}
+
+.heroBtn:hover {
+  background: #1549cc;
+  color: #f0f0f0;
+  transform: scale(1.05);
+}
+
+/* img section */
+.imgContainer {
+  position: relative;
+  max-width: 90vw;
+  margin: auto;
+  margin-top: 50px;
+  max-height: 700px;
+}
+
+.heroImg {
+  width: 100%;
+  height: 100%;
+  max-height: 700px;
+  position: relative;
+  z-index: 999;
+  object-fit: contain;
+}
+.heroBlueCircle {
+  position: absolute;
+  right: -20px;
+  top: -6%;
+}
+.heroOrengeCircle {
+  position: absolute;
+  left: -20px;
+  top: -6%;
+}
+.heroTriangle {
+  position: absolute;
+  top: 124px;
+  width: 321px;
+  left: 27px;
+}
+.heroSvg {
+  position: absolute;
+  top: 109px;
+  right: 53px;
+  width: 257px;
+}
+
+/* footer section */
+.footerContainer {
+  max-width: 90vw;
+  margin: auto;
+  margin-top: 200px;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 50px;
+
+  gap: 130px;
+}
+
+.box1 {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.footerLogoBox {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+.logo {
+  width: 23px;
+}
+.footerLogoText {
+  font-weight: 400;
+  font-family: "Outfit", sans-serif;
+}
+.box1Text {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 100;
+  font-size: 14px;
+  color: #ffffffeb;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.boxTextContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.linkBox {
+  display: flex;
+  gap: 10px;
+}
+.link {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 100;
+  font-size: 14px;
+  color: #ffffffeb;
+}
+.boxHeading {
+  font-size: 16px;
+  font-weight: 300;
+  font-family: "Outfit", sans-serif;
 }
