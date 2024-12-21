@@ -1,14 +1,40 @@
 const mongoose = require("mongoose");
 
 const formSchema = new mongoose.Schema({
-  content: [
+  contents: [
     {
-      img: { type: String, default: null },
-      text: { type: Title, required: true },
-      input: {
+      type: {
         type: String,
         required: true,
-        enum: ["text", "date", "number", "checkbox", "email"],
+        enum: ["bubble", "input"],
+      },
+      value: {
+        type: String,
+        required: true,
+        validate: {
+          validator: function (v) {
+            if (this.type === "bubble") {
+              return ["text", "image", "gif", "video"].includes(v);
+            } else if (this.type === "input") {
+              return [
+                "text",
+                "number",
+                "email",
+                "phone",
+                "rating",
+                "date",
+                "button",
+              ].includes(v);
+            }
+            return false;
+          },
+          message: (props) =>
+            `Invalid value: ${props.value} for type: ${props.instance.type}`,
+        },
+      },
+      content: {
+        type: String,
+        required: true,
       },
     },
   ],

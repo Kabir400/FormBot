@@ -1,0 +1,174 @@
+.container {
+  background: linear-gradient(0deg, #121212, #121212),
+    linear-gradient(0deg, #171923, #171923),
+    linear-gradient(0deg, #171923, #171923);
+  height: 100%;
+  min-height: 100vh;
+  width: 100vw;
+  color: white;
+}
+
+.nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px 60px;
+  border-bottom: 1px solid #ffffff29;
+}
+.navBox {
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.dropdown {
+  border: 1px solid #ffffff29;
+  display: flex;
+  gap: 25px;
+  padding: 10px;
+  border-radius: 6px;
+  padding-right: 20px;
+  align-items: center;
+}
+.dropdownArrow {
+  width: 10px;
+  height: 10px;
+}
+.dropdownText {
+  color: #ffffffeb;
+  font-size: 14px;
+  font-family: "Open Sans", sans-serif;
+}
+.navBoxRight {
+  display: flex;
+  align-items: center;
+  gap: 100px;
+}
+.share {
+  background-color: #1a5fff;
+  padding: 7px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-family: "Open Sans", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.themeContainer {
+  display: flex;
+  gap: 13px;
+  align-items: center;
+}
+.themeSwitch {
+  position: relative;
+  width: 47px;
+  height: 22px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.themeSwitchBtn {
+  position: absolute;
+  top: 3px;
+  width: 15px;
+  height: 15px;
+  background-color: #fff;
+  border-radius: 50%;
+  transition: left 0.3s;
+}
+.themeText {
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+}
+
+/* folder */
+.folderContainer {
+  padding-left: 15%;
+  display: flex;
+  gap: 20px;
+  margin-top: 60px;
+  flex-wrap: wrap;
+}
+.folderCreateBox {
+  background: #ffffff14;
+  border-radius: 6px;
+  padding: 10px 15px;
+  display: flex;
+
+  align-items: center;
+}
+.folderBox {
+  background: #ffffff14;
+  border-radius: 6px;
+  padding: 10px 15px;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+.folderText,
+.folderCreateText {
+  font-family: "Open Sans", sans-serif;
+  color: #ffffffeb;
+  font-size: 14px;
+}
+.folderImg {
+  width: 22px;
+  height: 18px;
+}
+.folderRemove {
+  cursor: pointer;
+  width: 17px;
+}
+
+/* form section */
+.formContainer {
+  padding-left: 15%;
+  display: flex;
+  gap: 20px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+.createFormBox {
+  display: flex;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  background-color: #1a5fff;
+  padding: 17px;
+  height: 165px;
+}
+.createFormText {
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+}
+.plusImg {
+  width: 28px;
+}
+.formBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border-radius: 6px;
+  background: #ffffff80;
+  padding: 17px;
+  height: 165px;
+  width: 139px;
+  cursor: pointer;
+}
+.formText {
+  font-family: "Open Sans", sans-serif;
+  font-size: 12px;
+}
+.removeImg {
+  position: absolute;
+  right: 0;
+  top: 0;
+  cursor: pointer;
+  width: 17px;
+}
