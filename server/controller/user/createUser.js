@@ -19,7 +19,12 @@ const createUser = TryCatch(async (req, res, next) => {
   }
 
   // Create new user
-  const user = await userModel.create({ email, name, password });
+  const user = await userModel.create({
+    email,
+    name,
+    password,
+    assignedUsers: [],
+  });
 
   // Generate tokens
   const Token = await user.generateToken();

@@ -5,9 +5,9 @@ const folderSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  dashboardID: {
+  userID: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "dashboard",
+    ref: "user",
     required: true,
   },
 });

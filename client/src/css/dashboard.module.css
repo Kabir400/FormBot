@@ -98,6 +98,13 @@
   display: flex;
 
   align-items: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.folderCreateBox:hover {
+  background: #ffffff30;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  transform: translateY(-3px);
 }
 .folderBox {
   background: #ffffff14;
@@ -106,6 +113,13 @@
   display: flex;
   gap: 5px;
   align-items: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.folderBox:hover {
+  background: #ffffff30;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
 }
 .folderText,
 .folderCreateText {
@@ -120,6 +134,10 @@
 .folderRemove {
   cursor: pointer;
   width: 17px;
+  transform: all 0.3s ease;
+}
+.folderRemove:hover {
+  transform: scale(1.2);
 }
 
 /* form section */
@@ -141,10 +159,18 @@
   background-color: #1a5fff;
   padding: 17px;
   height: 165px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+.createFormBox:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  background-color: #174ddd;
 }
 .createFormText {
   font-family: "Open Sans", sans-serif;
   font-size: 14px;
+  color: white;
 }
 .plusImg {
   width: 28px;
@@ -160,6 +186,12 @@
   height: 165px;
   width: 139px;
   cursor: pointer;
+  transition: all 0.3s ease;
+}
+.formBox:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  background: #ffffffcc;
 }
 .formText {
   font-family: "Open Sans", sans-serif;
@@ -171,4 +203,15 @@
   top: 0;
   cursor: pointer;
   width: 17px;
+  transition: all 0.3s ease;
+}
+.removeImg:hover {
+  transform: scale(1.2);
+}
+
+.active {
+  background-color: #ffffff !important;
+}
+.activeText {
+  color: black !important;
 }

@@ -1,0 +1,73 @@
+.popupContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 1000;
+}
+
+.popupBox {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: #18181b;
+  border-radius: 24px;
+  padding: 30px;
+  color: white;
+  font-family: "Open Sans", sans-serif;
+  top: 24%;
+  left: 27%;
+  width: 354px;
+  animation: slideDown 0.3s ease-out;
+}
+.popupBtnBox {
+  display: flex;
+}
+.doneBtn {
+  width: 50%;
+  border-right: 1px solid #47474a;
+  color: #4b83ff;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.cancelBtn {
+  width: 50%;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.doneBtn:hover {
+  transform: scale(1.05);
+}
+.cancelBtn:hover {
+  transform: scale(1.05);
+}
+
+.popupInput {
+  background: #1f1f23;
+  border-radius: 6px;
+  border: none;
+  padding: 10px 15px;
+  color: #a1a1a14f;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+}
+.popupHeading {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

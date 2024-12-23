@@ -16,6 +16,18 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  assignedUsers: [
+    {
+      assignedUser: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "user",
+      },
+      isEditable: {
+        type: Boolean,
+        default: false,
+      },
+    },
+  ],
 });
 
 //hashing the password before saving it to the database

@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const formSchema = new mongoose.Schema({
-  contents: [
+  content: [
     {
       type: {
         type: String,
@@ -32,15 +32,16 @@ const formSchema = new mongoose.Schema({
             `Invalid value: ${props.value} for type: ${props.instance.type}`,
         },
       },
-      content: {
+      placeholder: {
         type: String,
         required: true,
       },
     },
   ],
-  dashboardID: {
+  title: { type: String, required: true },
+  userID: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "dashboard",
+    ref: "user",
     required: true,
   },
   folderId: {

@@ -10,3 +10,36 @@
 body::-webkit-scrollbar {
   display: none;
 }
+
+.whiteBg {
+  background: white !important;
+}
+.darkText {
+  color: black !important;
+}
+.whiteText {
+  color: white !important;
+}
+.grayBg {
+  background: #0000008a !important;
+}
+.darkBottomBorder {
+  border-bottom: 1px solid #05040466 !important;
+}
+.darkBorder {
+  border: 1px solid #05040466 !important;
+}
+
+.convertDark {
+  filter: invert(1) brightness(0) grayscale(1);
+}
+.popupLightBox {
+  background: white !important;
+  color: #272525 !important;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1) !important;
+  border: 1px solid #d6d6d6 !important;
+}
+.popupLightInput {
+  color: #130f0f94 !important;
+  background: #dfdfe4 !important;
+}
