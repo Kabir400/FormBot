@@ -23,6 +23,13 @@ function WorkspaceBody() {
     setData({ ...data, formContent: updatedFormContent });
   };
 
+  //handle remove
+  const handleRemove = (index) => {
+    const updatedFormContent = [...data.formContent];
+    updatedFormContent.splice(index, 1);
+    setData({ ...data, formContent: updatedFormContent });
+  };
+
   return (
     <div className={style.bodyContainer}>
       <div
@@ -87,6 +94,7 @@ function WorkspaceBody() {
                 className={`${style.bodyBoxInput} ${
                   utility.theme === "light" && "lightInput"
                 }`}
+                value={item.placeholder}
                 onChange={(e) => handleInputChange(index, e.target.value)}
               />
             ) : item.type === "input" && item.value !== "button" ? (
@@ -94,8 +102,11 @@ function WorkspaceBody() {
             ) : (
               <input
                 type="text"
-                className={style.bodyBoxInput}
+                className={`${style.bodyBoxInput} ${
+                  utility.theme === "light" && "lightInput"
+                }`}
                 onChange={(e) => handleInputChange(index, e.target.value)}
+                value={item.placeholder}
               />
             )}
 
@@ -103,6 +114,9 @@ function WorkspaceBody() {
               className={`${style.removeBox} ${
                 utility.theme === "light" && "whiteBg darkBorder"
               }`}
+              onClick={() => {
+                handleRemove(index);
+              }}
             >
               <img src={remove} alt="remove" className={style.remove} />
             </div>

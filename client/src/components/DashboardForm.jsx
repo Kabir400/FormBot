@@ -1,5 +1,7 @@
 import React, { useContext } from "react";
 import { utilityContext, dataContext } from "../components/Store.jsx";
+import { useNavigate } from "react-router-dom";
+
 //css-
 import style from "../css/dashboard.module.css";
 
@@ -10,6 +12,7 @@ import remove from "../assets/delete.png";
 function DashboardForm() {
   const [utility, setUtility] = useContext(utilityContext);
   const [data, setData] = useContext(dataContext);
+  const navigate = useNavigate();
 
   return (
     <div className={style.formContainer}>
@@ -26,6 +29,7 @@ function DashboardForm() {
             utility.theme === "light" && "grayBg whiteText"
           } `}
           key={index}
+          onClick={() => navigate(`/workspace/${item._id}`)}
         >
           <p className={style.formText}>{item.title}</p>
           <img

@@ -27,15 +27,16 @@ function WorkspaceSidebar() {
                   utility.theme === "light" && "whiteBg darkText darkBorder"
                 }`}
                 key={index}
-                onClick={() =>
+                onClick={() => {
                   setData({
                     ...data,
                     formContent: [
                       ...data.formContent,
                       { type: "bubble", value: item.name, placeholder: "" },
                     ],
-                  })
-                }
+                  });
+                  setUtility({ ...utility, isDisabledShare: true });
+                }}
               >
                 <img
                   src={item.img}
@@ -62,15 +63,16 @@ function WorkspaceSidebar() {
                   utility.theme === "light" && "whiteBg darkText darkBorder"
                 }`}
                 key={index}
-                onClick={() =>
+                onClick={() => {
                   setData({
                     ...data,
                     formContent: [
                       ...data.formContent,
                       { type: "input", value: item.name, placeholder: "" },
                     ],
-                  })
-                }
+                  });
+                  setUtility({ ...utility, isDisabledShare: true });
+                }}
               >
                 <img src={item.img} className={style.sidebarBtnImg} />
                 <p className={style.sidebarBtnText}>{item.name}</p>

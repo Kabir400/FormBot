@@ -16,5 +16,6 @@ const fetchForm = require("../controller/forms/fetchForm.js");
 router.post("/create/form", checkLogin, createForm);
 router.post("/delete/form", checkLogin, deleteForm);
 router.post("/update/form", checkLogin, FormValidator, validate, updateForm);
+router.get("/form/:formId", checkLogin, fetchForm);
 
 module.exports = router;

@@ -235,3 +235,18 @@
   background: #555555;
   transform: scale(1.1);
 }
+
+.copyContainer {
+  position: absolute;
+  top: 86px;
+  right: 30px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px 30px;
+  z-index: 1000;
+  border: 1.32px solid #3d3d3f;
+  background: #18181b;
+  border-radius: 3.97px;
+  cursor: pointer;
+}

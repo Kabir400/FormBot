@@ -12,6 +12,8 @@ function Store({ children }) {
     DeleteFormPopup: false,
     DeleteFolderId: null,
     DeleteFormId: null,
+    isDisabledShare: true,
+    isCopied: false,
   });
 
   const data = useState({
@@ -20,6 +22,7 @@ function Store({ children }) {
     selectedFolderId: null,
     filterdForms: [],
     formContent: [],
+    formTitle: "",
   });
 
   useEffect(() => {
