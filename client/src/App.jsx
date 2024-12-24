@@ -16,6 +16,7 @@ import CreateFolderPopup from "./components/CreateFolderPopup.jsx";
 import CreateFormPopup from "./components/CreateFormPopup.jsx";
 import DeleteFolderPopup from "./components/DeleteFolderPopup.jsx";
 import DeleteFormPopup from "./components/DeleteFormPopup.jsx";
+import Workspace from "./pages/Workspace.jsx";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
             <Route path="/signup" element={<Signup />} />
             <Route path="/" element={<Home />} />
             <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/workspace/:id" element={<Workspace />} />
           </Routes>
           <CreateFolderPopup />
           <CreateFormPopup />

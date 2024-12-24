@@ -19,6 +19,7 @@ function Store({ children }) {
     forms: [],
     selectedFolderId: null,
     filterdForms: [],
+    formContent: [],
   });
 
   useEffect(() => {

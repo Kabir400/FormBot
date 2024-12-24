@@ -54,7 +54,11 @@ function Dashboard() {
 
   if (isPending) {
     return (
-      <div className={style.container}>
+      <div
+        className={`${style.container} ${
+          utility.theme === "light" && "whiteBg darkText"
+        }`}
+      >
         <Loader />
       </div>
     );

@@ -5,12 +5,14 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
+  scrollbar-width: none !important;
 }
 
-body::-webkit-scrollbar {
-  display: none;
+*::-webkit-scrollbar {
+  display: none !important;
 }
 
+/* utility classes for light theme */
 .whiteBg {
   background: white !important;
 }
@@ -42,4 +44,21 @@ body::-webkit-scrollbar {
 .popupLightInput {
   color: #130f0f94 !important;
   background: #dfdfe4 !important;
+}
+.lightShadow {
+  box-shadow: 0px 10px 10px -5px #0000000a !important;
+  box-shadow: 0px 20px 25px -5px #0000001a !important;
+  border: 2px solid #00000029 !important;
+}
+/* .lightBorder {
+  border: 1px solid #d6d6d6 !important;
+} */
+.lightInput {
+  border: 1px solid #d6d6d6 !important;
+  background-color: white !important;
+  color: #767676d1 !important;
+}
+.convertBlue {
+  filter: invert(31%) sepia(97%) saturate(3185%) hue-rotate(169deg)
+    brightness(94%) contrast(101%);
 }
