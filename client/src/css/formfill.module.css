@@ -1,0 +1,107 @@
+.box {
+  width: 70vw;
+
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 60px;
+  margin: 30px auto;
+}
+.left {
+  align-self: flex-start;
+}
+.right {
+  align-self: flex-end;
+}
+.bubbleTextContainer {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.avater {
+  width: 54px;
+}
+.bubbleText {
+  font-size: 17px;
+  font-family: "Open Sans", sans-serif;
+  background-color: #f7f8ff;
+  border-radius: 6px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.bubbleImage {
+  max-width: 100%;
+  max-height: 500px;
+  object-fit: contain;
+  border-radius: 10px;
+  margin: 10px 0;
+}
+.inputBox {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.inputText {
+  box-shadow: 0px 4px 6.3px 0px #00000040;
+  border-radius: 5px;
+  border: none;
+  padding: 10px;
+  color: #847f7f;
+  font-family: "Open Sans", sans-serif;
+  width: 244px;
+}
+.inputText:focus {
+  border: none;
+  outline: none;
+}
+.datePicker:focus {
+  border: none;
+  outline: none;
+}
+.sendBox {
+  background: #1a5fff;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+  height: 45px;
+  display: flex;
+}
+.datePicker {
+  box-shadow: 0px 4px 6.3px 0px #00000040;
+  border-radius: 5px;
+  border: none;
+  padding: 10px;
+  color: #847f7f;
+  font-family: "Open Sans", sans-serif;
+  width: 244px;
+}
+.ratingBox {
+  padding: 10px 20px;
+  background: white;
+  box-shadow: 0px 4px 6.3px 0px #00000040;
+  width: 244px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+.star {
+  cursor: pointer;
+  background: #1a5fff;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 11px;
+  transform: all 0.3s ease;
+}
+.star:hover {
+  transform: scale(1.2);
+}
+.active {
+  background-color: #ff8e21;
+}

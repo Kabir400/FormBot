@@ -14,6 +14,7 @@ function Store({ children }) {
     DeleteFormId: null,
     isDisabledShare: true,
     isCopied: false,
+    validationError: {},
   });
 
   const data = useState({

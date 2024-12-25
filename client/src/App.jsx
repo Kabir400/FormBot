@@ -17,6 +17,7 @@ import CreateFormPopup from "./components/CreateFormPopup.jsx";
 import DeleteFolderPopup from "./components/DeleteFolderPopup.jsx";
 import DeleteFormPopup from "./components/DeleteFormPopup.jsx";
 import Workspace from "./pages/Workspace.jsx";
+import FormFill from "./pages/FormFill.jsx";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/workspace/:id" element={<Workspace />} />
+            <Route path="/fill/form/:id" element={<FormFill />} />
           </Routes>
           <CreateFolderPopup />
           <CreateFormPopup />

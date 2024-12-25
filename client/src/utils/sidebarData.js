@@ -85,11 +85,12 @@ export const formData = [
   {
     type: "bubble",
     value: "image",
-    placeholder: "",
+    placeholder:
+      "https://res-console.cloudinary.com/dv4re7bf8/thumbnails/v1/image/upload/v1733059282/YnVyZ2VyX3NyMmptbA==/drilldown",
   },
   {
     type: "input",
-    value: "email",
+    value: "date",
     placeholder: "",
   },
   {
@@ -110,6 +111,29 @@ export const formData = [
   {
     type: "input",
     value: "rating",
+    placeholder: "",
+  },
+];
+
+export const deta = [
+  {
+    type: "bubble",
+    value: "text",
+    placeholder: "Enter your email",
+  },
+  {
+    type: "input",
+    value: "email",
+    placeholder: "",
+  },
+  {
+    type: "bubble",
+    value: "text",
+    placeholder: "Enter your name",
+  },
+  {
+    type: "input",
+    value: "text",
     placeholder: "",
   },
 ];

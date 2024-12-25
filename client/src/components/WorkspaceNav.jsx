@@ -25,6 +25,30 @@ function WorkspaceNav() {
 
   //handle save-------------------------------------------
   const handleSave = async () => {
+    //client validaton--
+    const errors = {};
+
+    data.formContent.forEach((item, index) => {
+      if (
+        item.type === "bubble" ||
+        (item.type === "input" && item.value === "button")
+      ) {
+        if (!item.placeholder || item.placeholder.trim() === "") {
+          errors[index] = "Required Field";
+        }
+      }
+    });
+
+    if (Object.keys(errors).length > 0) {
+      setUtility({
+        ...utility,
+        validationError: errors,
+      });
+      return;
+    }
+
+    //..............................................
+
     const toastId = toast.loading("Saving changes...", {
       position: "top-right",
       autoClose: false, // Prevent auto-closing while loading
@@ -42,7 +66,7 @@ function WorkspaceNav() {
           formContent: result.data.content,
           formTitle: result.data.title,
         });
-        setUtility({ ...utility, isDisabledShare: false });
+        setUtility({ ...utility, isDisabledShare: false, validationError: {} });
         toast.update(toastId, {
           render: result.message,
           type: "success",

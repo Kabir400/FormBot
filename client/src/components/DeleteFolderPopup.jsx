@@ -51,6 +51,9 @@ function DeleteFolderPopup() {
       });
     } else {
       setIsPending(false);
+      if (result.status === 401) {
+        navigate("/login");
+      }
       toast.error(result.message, {
         position: "top-right",
         autoClose: 3000,

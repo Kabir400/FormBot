@@ -88,26 +88,40 @@ function WorkspaceBody() {
             </h5>
 
             {item.type === "bubble" ? (
-              <input
-                type="text"
-                placeholder={placeholder}
-                className={`${style.bodyBoxInput} ${
-                  utility.theme === "light" && "lightInput"
-                }`}
-                value={item.placeholder}
-                onChange={(e) => handleInputChange(index, e.target.value)}
-              />
+              <>
+                <input
+                  type="text"
+                  placeholder={placeholder}
+                  className={`${style.bodyBoxInput} ${
+                    utility.theme === "light" && "lightInput"
+                  } ${utility.validationError[index] ? style.errorInput : ""}`}
+                  value={item.placeholder}
+                  onChange={(e) => handleInputChange(index, e.target.value)}
+                />
+                {utility.validationError[index] && (
+                  <p className={style.errorText}>
+                    {utility.validationError[index]}
+                  </p>
+                )}
+              </>
             ) : item.type === "input" && item.value !== "button" ? (
               <p className={style.bodyBoxSubText}>{subTitle}</p>
             ) : (
-              <input
-                type="text"
-                className={`${style.bodyBoxInput} ${
-                  utility.theme === "light" && "lightInput"
-                }`}
-                onChange={(e) => handleInputChange(index, e.target.value)}
-                value={item.placeholder}
-              />
+              <>
+                <input
+                  type="text"
+                  className={`${style.bodyBoxInput} ${
+                    utility.theme === "light" && "lightInput"
+                  } ${utility.validationError[index] ? style.errorInput : ""}`}
+                  onChange={(e) => handleInputChange(index, e.target.value)}
+                  value={item.placeholder}
+                />
+                {utility.validationError[index] && (
+                  <p className={style.errorText}>
+                    {utility.validationError[index]}
+                  </p>
+                )}
+              </>
             )}
 
             <div

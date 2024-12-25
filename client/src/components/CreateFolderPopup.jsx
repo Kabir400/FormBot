@@ -40,6 +40,9 @@ function CreateFolderPopup() {
         autoClose: 3000,
       });
     } else {
+      if (result.status === 401) {
+        navigate("/login");
+      }
       setIsPending(false);
       toast.error(result.message, {
         position: "top-right",

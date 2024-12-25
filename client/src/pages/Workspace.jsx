@@ -13,13 +13,14 @@ import WorkspaceSidebar from "../components/WorkspaceSidebar.jsx";
 import { dataContext, utilityContext } from "../components/Store.jsx";
 import { toast } from "react-toastify";
 import getRequest from "../utils/getRequest.js";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import Loader from "../components/Loader.jsx";
 
 function Workspace() {
   const [data, setData] = useContext(dataContext);
   const [utility, setUtility] = useContext(utilityContext);
   const [isPending, setIsPending] = useState(false);
+  const navigate = useNavigate();
 
   const { id } = useParams();
 
