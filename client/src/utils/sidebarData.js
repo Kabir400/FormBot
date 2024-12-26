@@ -68,50 +68,13 @@ export const formData = [
   },
   {
     type: "input",
-    value: "text",
-    placeholder: "",
-  },
-
-  {
-    type: "bubble",
-    value: "text",
-    placeholder: "",
-  },
-  {
-    type: "input",
-    value: "text",
-    placeholder: "",
-  },
-  {
-    type: "bubble",
-    value: "image",
-    placeholder:
-      "https://res-console.cloudinary.com/dv4re7bf8/thumbnails/v1/image/upload/v1733059282/YnVyZ2VyX3NyMmptbA==/drilldown",
-  },
-  {
-    type: "input",
-    value: "date",
-    placeholder: "",
-  },
-  {
-    type: "input",
-    value: "phone",
-    placeholder: "",
-  },
-  {
-    type: "input",
-    value: "number",
-    placeholder: "",
-  },
-  {
-    type: "input",
-    value: "date",
-    placeholder: "",
-  },
-  {
-    type: "input",
     value: "rating",
-    placeholder: "",
+    placeholder: "Enter text",
+  },
+  {
+    type: "input",
+    value: "button",
+    placeholder: "Submit",
   },
 ];
 

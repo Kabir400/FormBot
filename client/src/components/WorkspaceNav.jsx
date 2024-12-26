@@ -99,7 +99,7 @@ function WorkspaceNav() {
   const handleShare = () => {
     if (!utility.isDisabledShare) {
       navigator.clipboard
-        .writeText(`${window.location.hostname}/fill/form/${id}`)
+        .writeText(`${window.location.origin}/fill/form/${id}`)
         .then(() => {
           setUtility({ ...utility, isCopied: true });
           setTimeout(() => setUtility({ ...utility, isCopied: false }), 2000);

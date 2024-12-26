@@ -105,3 +105,29 @@
 .active {
   background-color: #ff8e21;
 }
+.buttonContainer {
+  padding: 10px;
+  background: #053ec4;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: "Open Sans", sans-serif;
+  transition: all 0.3s ease;
+  font-size: 17px;
+}
+.buttonSubmited {
+  background: #ff8e21 !important;
+}
+.buttonContainer:hover {
+  transform: scale(1.05);
+}
+
+/* disable style */
+.disabledInputText {
+  background: #777777 !important;
+  box-shadow: 0px 4px 6.3px 0px #00000040 !important;
+  color: white !important;
+}
+.disbledSendBox {
+  background: #777777 !important;
+}

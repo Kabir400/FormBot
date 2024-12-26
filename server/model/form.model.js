@@ -49,6 +49,18 @@ const formSchema = new mongoose.Schema({
     ref: "folder",
     default: null,
   },
+  views: {
+    type: Number,
+    default: 0,
+  },
+  starts: {
+    type: Number,
+    default: 0,
+  },
+  completed: {
+    type: Number,
+    default: 0,
+  },
 });
 
 const formModel = mongoose.model("form", formSchema);
