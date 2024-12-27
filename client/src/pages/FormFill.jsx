@@ -198,7 +198,15 @@ function FormFill() {
   }, [allData]);
 
   if (isPending) {
-    return <Loader />;
+    return (
+      <div
+        className={`${style.container} ${
+          theme === "dark" && "darkBg whiteText"
+        }`}
+      >
+        <Loader />
+      </div>
+    );
   }
 
   return (

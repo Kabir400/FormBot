@@ -27,7 +27,6 @@ function Responses() {
 
   useEffect(() => {
     (async () => {
-      console.log(id);
       setIsPending(true);
       const result = await getRequest(`${base_url}/responses/${id}`);
 
@@ -49,7 +48,15 @@ function Responses() {
   }, []);
 
   if (isPending) {
-    return <Loader />;
+    return (
+      <div
+        className={`${style.container} ${
+          utility.theme === "light" && "whiteBg darkText"
+        }`}
+      >
+        <Loader />
+      </div>
+    );
   }
 
   return (

@@ -21,7 +21,6 @@ function DeleteFormPopup() {
   };
 
   const deleteForm = async () => {
-    console.log("hello");
     setIsPending(true);
     const result = await postRequest(
       `${base_url}/delete/form`,

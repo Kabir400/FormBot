@@ -8,12 +8,15 @@ import style from "../css/workspace.module.css";
 //imports-
 import Theme from "./Theme.jsx";
 import { utilityContext } from "./Store.jsx";
+import { useNavigate, useParams } from "react-router-dom";
 
 //img-
 import close from "../assets/close.png";
 
 function ResponseNav() {
   const [utility] = useContext(utilityContext);
+  const navigate = useNavigate();
+  const { id } = useParams();
   return (
     <div
       className={`${style.nav}  ${
@@ -22,7 +25,12 @@ function ResponseNav() {
     >
       <div style={{ width: "158px" }}></div>
       <div className={style.navMiddle}>
-        <div className={`${style.navMiddleText}`}>Flow</div>
+        <div
+          className={`${style.navMiddleText}`}
+          onClick={() => navigate(`/workspace/${id}`)}
+        >
+          Flow
+        </div>
         <div className={`${style.navMiddleText} ${style.navSelected}`}>
           Response
         </div>
@@ -48,7 +56,12 @@ function ResponseNav() {
           >
             Save
           </div>
-          <img src={close} alt="close" className={style.close} />
+          <img
+            src={close}
+            alt="close"
+            className={style.close}
+            onClick={() => navigate("/dashboard")}
+          />
         </div>
       </div>
     </div>

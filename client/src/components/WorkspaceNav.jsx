@@ -131,7 +131,12 @@ function WorkspaceNav() {
         <div className={`${style.navMiddleText} ${style.navSelected}`}>
           Flow
         </div>
-        <div className={style.navMiddleText}>Response</div>
+        <div
+          className={style.navMiddleText}
+          onClick={() => navigate(`/responses/${id}`)}
+        >
+          Response
+        </div>
       </div>
 
       <div className={style.navEnd}>
@@ -156,7 +161,12 @@ function WorkspaceNav() {
           >
             Save
           </div>
-          <img src={close} alt="close" className={style.close} />
+          <img
+            src={close}
+            alt="close"
+            className={style.close}
+            onClick={() => navigate("/dashboard")}
+          />
         </div>
       </div>
     </div>
