@@ -15,6 +15,7 @@ const fetchForm = require("../controller/forms/fetchForm.js");
 const fetchFillform = require("../controller/forms/fetchFillform.js");
 const createResponse = require("../controller/forms/createResponse.js");
 const updateResponse = require("../controller/forms/updateResponse.js");
+const getResponse = require("../controller/forms/getResponse.js");
 
 //routes
 router.post("/create/form", checkLogin, createForm);
@@ -24,5 +25,6 @@ router.get("/form/:formId", checkLogin, fetchForm);
 router.get("/fill/form/:formId", fetchFillform);
 router.post("/create/response", formFillValidator, validate, createResponse);
 router.post("/update/response", formFillValidator, validate, updateResponse);
+router.get("/responses/:formId", checkLogin, getResponse);
 
 module.exports = router;

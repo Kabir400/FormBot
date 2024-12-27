@@ -3,7 +3,7 @@ import { responseData } from "../utils/sidebarData";
 import { formatDateTime, camelCase } from "../utils/format.js";
 import style from "../css/response.module.css";
 
-function Table() {
+function Table({ responseData = [] }) {
   const [filteredData, setFilteredData] = useState([]);
   const headers = ["", "Submitted at", "Email", "Name"];
 
