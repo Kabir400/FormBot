@@ -28,6 +28,7 @@ function FormFill() {
   const [isSubmited, setIsSubmited] = useState(false);
   const [disabled, setDisabled] = useState({});
   const [isPending, setIsPending] = useState(false);
+  const [theme, setTheme] = useState("light");
   const { id } = useParams();
   const navigate = useNavigate();
 
@@ -39,6 +40,7 @@ function FormFill() {
       if (result.suceess === true) {
         setIsPending(false);
         setAllData([...deta, ...result.data.content]);
+        setTheme(result.data.theme);
       } else {
         setIsPending(false);
 
@@ -200,7 +202,9 @@ function FormFill() {
   }
 
   return (
-    <div className={style.container}>
+    <div
+      className={`${style.container} ${theme === "dark" && "darkBg whiteText"}`}
+    >
       <div className={style.box}>
         {trimmedData.map((item, index) => {
           if (item.type === "bubble" && item.value === "text") {
@@ -210,7 +214,13 @@ function FormFill() {
                 className={`${style.left} ${style.bubbleTextContainer}`}
               >
                 <img src={avater} alt="Avatar" className={style.avater} />
-                <div className={style.bubbleText}>{item.placeholder}</div>
+                <div
+                  className={`${style.bubbleText} ${
+                    theme === "dark" && "lightGrayBg"
+                  }`}
+                >
+                  {item.placeholder}
+                </div>
               </div>
             );
           } else if (
@@ -252,7 +262,9 @@ function FormFill() {
                 <input
                   type="text"
                   placeholder={`Enter your ${item.value}`}
-                  className={style.inputText}
+                  className={`${style.inputText} ${
+                    theme === "dark" && style.disabledInputText
+                  }`}
                   readOnly={disabled[index]}
                   onChange={(e) => {
                     handleChange(index, e.target.value);
@@ -260,7 +272,9 @@ function FormFill() {
                   value={formValues[index] || ""}
                 />
                 <div
-                  className={`${style.sendBox}`}
+                  className={`${style.sendBox} ${
+                    theme === "dark" && style.disbledSendBox
+                  }`}
                   onClick={() => {
                     if (disabled[index]) return;
                     sendHandler(index, item);
@@ -281,7 +295,7 @@ function FormFill() {
                   placeholder={`Enter your ${item.value}`}
                   className={`${style.inputText} ${
                     disabled[index] && style.disabledInputText
-                  }`}
+                  } ${theme === "dark" && style.disabledInputText}`}
                   readOnly={disabled[index]}
                   onChange={(e) => {
                     handleChange(index, e.target.value);
@@ -291,7 +305,7 @@ function FormFill() {
                 <div
                   className={`${style.sendBox} ${
                     disabled[index] && style.disbledSendBox
-                  }`}
+                  } ${theme === "dark" && style.disbledSendBox}`}
                   onClick={() => {
                     if (disabled[index]) return;
                     sendHandler(index, item);
@@ -309,7 +323,7 @@ function FormFill() {
                   placeholder={`Enter a ${item.value}`}
                   className={`${style.inputText} ${
                     disabled[index] && style.disabledInputText
-                  }`}
+                  } ${theme === "dark" && style.disabledInputText}`}
                   readOnly={disabled[index]}
                   onChange={(e) => {
                     handleChange(index, e.target.value);
@@ -319,7 +333,7 @@ function FormFill() {
                 <div
                   className={`${style.sendBox} ${
                     disabled[index] && style.disbledSendBox
-                  }`}
+                  } ${theme === "dark" && style.disbledSendBox}`}
                   onClick={() => {
                     if (disabled[index]) return;
                     sendHandler(index, item);
@@ -341,12 +355,12 @@ function FormFill() {
                   showPopperArrow={false}
                   className={`${style.datePicker} ${
                     disabled[index] && style.disabledInputText
-                  }`}
+                  } ${theme === "dark" && style.disabledInputText}`}
                 />
                 <div
                   className={`${style.sendBox} ${
                     disabled[index] && style.disbledSendBox
-                  }`}
+                  } ${theme === "dark" && style.disbledSendBox}`}
                   onClick={() => {
                     if (disabled[index]) return;
                     sendHandler(index, item);
@@ -362,7 +376,7 @@ function FormFill() {
                 <div
                   className={`${style.ratingBox} ${
                     disabled[index] && style.disabledInputText
-                  }`}
+                  } ${theme === "dark" && style.disabledInputText}`}
                 >
                   {[1, 2, 3, 4, 5].map((star) => (
                     <span
@@ -382,7 +396,7 @@ function FormFill() {
                 <div
                   className={`${style.sendBox} ${
                     disabled[index] && style.disbledSendBox
-                  }`}
+                  } ${theme === "dark" && style.disbledSendBox}`}
                   onClick={() => {
                     if (disabled[index]) return;
                     sendHandler(index, item);

@@ -1,11 +1,15 @@
+.container {
+  min-height: 100vh;
+}
+
 .box {
   width: 70vw;
-
   display: flex;
   flex-direction: column;
   gap: 30px;
   padding: 60px;
-  margin: 30px auto;
+  margin: auto;
+  padding: 40px 0;
 }
 .left {
   align-self: flex-start;
@@ -130,4 +134,27 @@
 }
 .disbledSendBox {
   background: #777777 !important;
+}
+
+/* for place holders */
+.disabledInputText::placeholder {
+  color: white;
+  opacity: 1;
+}
+
+/* For better browser compatibility: */
+.disabledInputText::-webkit-input-placeholder {
+  color: white; /* Chrome, Safari, Edge */
+}
+
+.disabledInputText::-moz-placeholder {
+  color: white; /* Firefox 19+ */
+}
+
+.disabledInputText:-ms-input-placeholder {
+  color: white; /* IE 10+ */
+}
+
+.disabledInputText:-moz-placeholder {
+  color: white; /* Firefox 18- */
 }

@@ -61,6 +61,10 @@ const formSchema = new mongoose.Schema({
     type: Number,
     default: 0,
   },
+  theme: {
+    type: String,
+    default: "light",
+  },
 });
 
 const formModel = mongoose.model("form", formSchema);

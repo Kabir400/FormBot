@@ -56,7 +56,12 @@ function WorkspaceNav() {
     try {
       const result = await postRequest(
         `${base_url}/update/form`,
-        { content: data.formContent, title: data.formTitle, formId: id },
+        {
+          content: data.formContent,
+          title: data.formTitle,
+          formId: id,
+          theme: utility.theme,
+        },
         "json"
       );
 

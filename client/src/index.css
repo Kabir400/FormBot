@@ -22,6 +22,9 @@
 .whiteText {
   color: white !important;
 }
+.darkBg {
+  background: #18181b !important;
+}
 .grayBg {
   background: #0000008a !important;
 }
@@ -58,6 +61,17 @@
   background-color: white !important;
   color: #767676d1 !important;
 }
+.lightGrayBg {
+  background: #575759 !important;
+}
+/* .grayInputBg {
+  background: #777777 !important;
+  box-shadow: 0px 4px 6.3px 0px #00000040;
+  border-radius: 4px;
+  border: none !important;
+  color: white !important;
+} */
+
 .convertBlue {
   filter: invert(31%) sepia(97%) saturate(3185%) hue-rotate(169deg)
     brightness(94%) contrast(101%);

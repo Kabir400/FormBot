@@ -1,5 +1,6 @@
 const postRequest = async (url, data, type) => {
   let Data = data;
+
   let headers = {
     "Content-Type": "application/x-www-form-urlencoded",
   };

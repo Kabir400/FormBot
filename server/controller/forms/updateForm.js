@@ -5,7 +5,7 @@ const formModel = require("../../model/form.model.js");
 const userModel = require("../../model/user.model.js");
 
 const updateForm = TryCatch(async (req, res, next) => {
-  const { formId, content, title } = req.body;
+  const { formId, content, title, theme } = req.body;
   const userId = req.user._id;
 
   // Validate input
@@ -21,7 +21,7 @@ const updateForm = TryCatch(async (req, res, next) => {
 
   // Check if the user is the owner of the form
   if (form.userID.toString() === userId.toString()) {
-    return updateFormContent(form, content, title, res, next);
+    return updateFormContent(form, content, title, res, next, theme);
   }
 
   // Check if the user has edit access to the form
@@ -39,11 +39,11 @@ const updateForm = TryCatch(async (req, res, next) => {
   }
 
   // Allow update for users with edit permissions
-  return updateFormContent(form, content, res, next);
+  return updateFormContent(form, content, res, next, theme);
 });
 
 // Helper function to update form content
-async function updateFormContent(form, content, title, res, next) {
+async function updateFormContent(form, content, title, res, next, theme) {
   // Validate the content
   const lastElement = content[content.length - 1];
   if (
@@ -64,7 +64,7 @@ async function updateFormContent(form, content, title, res, next) {
   // Update the form content
   const updatedForm = await formModel.findByIdAndUpdate(
     form._id,
-    { content, title },
+    { content, title, theme: theme || "light" },
     { new: true, runValidators: true }
   );
 

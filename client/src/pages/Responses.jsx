@@ -1,7 +1,7 @@
 //base url-
 const base_url = import.meta.env.VITE_BASE_URL;
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 
 //css-
 import style from "../css/response.module.css";
@@ -15,6 +15,7 @@ import getRequest from "../utils/getRequest.js";
 import { useParams, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import Loader from "../components/Loader.jsx";
+import { utilityContext } from "../components/Store.jsx";
 
 function Responses() {
   const { id } = useParams();
@@ -22,6 +23,7 @@ function Responses() {
   const [responseData, setResponseData] = useState([]);
   const [form, setForm] = useState({});
   const [isPending, setIsPending] = useState(false);
+  const [utility, setUtility] = useContext(utilityContext);
 
   useEffect(() => {
     (async () => {
@@ -51,7 +53,11 @@ function Responses() {
   }
 
   return (
-    <div className={style.container}>
+    <div
+      className={`${style.container} ${
+        utility.theme === "light" && "whiteBg darkText"
+      }`}
+    >
       <ResponseNav />
       <div className={style.statsContainer}>
         <Stats title="Views" value={form?.views} />
