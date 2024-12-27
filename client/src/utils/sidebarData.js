@@ -78,6 +78,105 @@ export const formData = [
   },
 ];
 
+export const responseData = [
+  {
+    name: "billa Doe",
+    email: "abc@example.com",
+    formId: "123",
+    content: [
+      {
+        field: "text",
+        value: "damosa",
+      },
+      {
+        field: "email",
+        value: "abc@example.com",
+      },
+    ],
+    submited: null,
+  },
+  {
+    name: "John Doe",
+    email: "abc@example.com",
+    formId: "123",
+    content: [
+      {
+        field: "text",
+        value: "John Doe",
+      },
+      {
+        field: "email",
+        value: "xyz@example.com",
+      },
+      {
+        field: "text",
+        value: "doggy ka achar",
+      },
+      {
+        field: "phone",
+        value: "9735403608",
+      },
+      {
+        field: "number",
+        value: "97",
+      },
+      {
+        field: "email",
+        value: "billa@gmail.com",
+      },
+      {
+        field: "button",
+        value: "submit",
+      },
+    ],
+    submited: "2024-12-26T10:51:41.706+00:00",
+  },
+  {
+    name: "John Doe",
+    email: "abc@example.com",
+    formId: "123",
+    content: [
+      {
+        field: "text",
+        value: "John Doe",
+      },
+      {
+        field: "email",
+        value: "xyz@example.com",
+      },
+      {
+        field: "text",
+        value: "doggy ka achar",
+      },
+      {
+        field: "phone",
+        value: "9735403608",
+      },
+    ],
+    submited: "2024-12-26T10:51:41.706+00:00",
+  },
+  {
+    name: "John Doe",
+    email: "abc@example.com",
+    formId: "123",
+    content: [
+      {
+        field: "text",
+        value: "John Doe",
+      },
+      {
+        field: "email",
+        value: "xyz@example.com",
+      },
+      {
+        field: "text",
+        value: "doggy ka achar",
+      },
+    ],
+    submited: "2024-12-26T10:51:41.706+00:00",
+  },
+];
+
 export const deta = [
   {
     type: "bubble",
