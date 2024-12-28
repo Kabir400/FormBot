@@ -21,6 +21,7 @@ const userSchema = new mongoose.Schema({
       assignedUser: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "user",
+        required: true,
       },
       isEditable: {
         type: Boolean,

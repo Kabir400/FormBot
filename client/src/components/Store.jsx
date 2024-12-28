@@ -24,6 +24,12 @@ function Store({ children }) {
     filterdForms: [],
     formContent: [],
     formTitle: "",
+    clickedDashboard: {
+      id: "",
+      name: "",
+      isEditable: true,
+      isOwner: true,
+    },
   });
 
   useEffect(() => {
