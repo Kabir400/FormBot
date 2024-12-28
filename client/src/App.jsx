@@ -16,6 +16,7 @@ import CreateFolderPopup from "./components/CreateFolderPopup.jsx";
 import CreateFormPopup from "./components/CreateFormPopup.jsx";
 import DeleteFolderPopup from "./components/DeleteFolderPopup.jsx";
 import DeleteFormPopup from "./components/DeleteFormPopup.jsx";
+import SharePopup from "./components/SharePopup.jsx";
 import Workspace from "./pages/Workspace.jsx";
 import FormFill from "./pages/FormFill.jsx";
 import Responses from "./pages/Responses.jsx";
@@ -38,6 +39,7 @@ function App() {
           <CreateFormPopup />
           <DeleteFolderPopup />
           <DeleteFormPopup />
+          <SharePopup />
         </div>
         <ToastContainer />
       </Router>

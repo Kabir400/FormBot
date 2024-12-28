@@ -22,15 +22,18 @@ function DashboardFolder() {
 
   return (
     <div className={style.folderContainer}>
-      <div
-        className={`${style.folderCreateBox} ${
-          utility.theme === "light" && "grayBg"
-        }`}
-        onClick={() => setUtility({ ...utility, createFolderPopup: true })}
-      >
-        <img src={folder} className={style.folderImg} />
-        <p className={style.folderCreateText}>Create a folder</p>
-      </div>
+      {data.clickedDashboard.isOwner && (
+        <div
+          className={`${style.folderCreateBox} ${
+            utility.theme === "light" && "grayBg"
+          }`}
+          onClick={() => setUtility({ ...utility, createFolderPopup: true })}
+        >
+          <img src={folder} className={style.folderImg} />
+          <p className={style.folderCreateText}>Create a folder</p>
+        </div>
+      )}
+
       {data.folders.map((item, index) => (
         <div
           className={`${style.folderBox} ${

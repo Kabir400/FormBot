@@ -153,6 +153,9 @@ function DashboardNav() {
             className={`${style.share} ${
               utility.theme === "light" && "whiteText"
             }`}
+            onClick={() => {
+              setUtility({ ...utility, sharePopup: true });
+            }}
           >
             Share
           </div>

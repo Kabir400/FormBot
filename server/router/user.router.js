@@ -12,6 +12,7 @@ const loginUser = require("../controller/user/loginUser.js");
 const fetchData = require("../controller/user/fetchData.js");
 const fetchDashboard = require("../controller/user/fetchDashboard.js");
 const fetchOthersData = require("../controller/user/fetchOthersData.js");
+const assignedUser = require("../controller/user/assignedUser.js");
 
 //routes
 router.post("/signup", userValidator, validate, createUser);
@@ -19,5 +20,6 @@ router.post("/login", loginUser);
 router.get("/data", checkLogin, fetchData);
 router.get("/dashboards", checkLogin, fetchDashboard);
 router.get("/others/:id", checkLogin, fetchOthersData);
+router.post("/assign", checkLogin, assignedUser);
 
 module.exports = router;

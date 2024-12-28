@@ -16,13 +16,16 @@ function DashboardForm() {
 
   return (
     <div className={style.formContainer}>
-      <div
-        className={style.createFormBox}
-        onClick={() => setUtility({ ...utility, createFormPopup: true })}
-      >
-        <img src={plus} className={style.plusImg} />
-        <p className={style.createFormText}>Create a typebot</p>
-      </div>
+      {data.clickedDashboard.isOwner && (
+        <div
+          className={style.createFormBox}
+          onClick={() => setUtility({ ...utility, createFormPopup: true })}
+        >
+          <img src={plus} className={style.plusImg} />
+          <p className={style.createFormText}>Create a typebot</p>
+        </div>
+      )}
+
       {data.filterdForms.map((item, index) => (
         <div
           className={`${style.formBox} ${

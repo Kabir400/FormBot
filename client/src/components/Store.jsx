@@ -13,6 +13,7 @@ function Store({ children }) {
     DeleteFolderId: null,
     DeleteFormId: null,
     isDisabledShare: true,
+    sharePopup: false,
     isCopied: false,
     validationError: {},
   });
