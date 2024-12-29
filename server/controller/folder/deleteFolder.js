@@ -28,10 +28,10 @@ const deleteFolder = TryCatch(async (req, res, next) => {
 
     // Check if the user is the owner
     if (folder.userID.toString() !== userId.toString()) {
-      const user = await userModel.findById(userId).session(session);
+      const user = await userModel.findById(folder.userID).session(session);
       const isEditable = user.assignedUsers.some(
         (assignedUser) =>
-          assignedUser.assignedUser.toString() === folder.userID.toString() &&
+          assignedUser.assignedUser.toString() === userId.toString() &&
           assignedUser.isEditable
       );
 

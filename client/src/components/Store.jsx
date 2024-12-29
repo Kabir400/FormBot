@@ -14,6 +14,7 @@ function Store({ children }) {
     DeleteFormId: null,
     isDisabledShare: true,
     sharePopup: false,
+    editAccess: true,
     isCopied: false,
     validationError: {},
   });

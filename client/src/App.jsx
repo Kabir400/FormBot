@@ -10,6 +10,7 @@ import Signup from "./pages/Signup.jsx";
 import Home from "./pages/Home.jsx";
 import Dashboard from "./pages/Dashboard.jsx";
 import Store from "./components/Store.jsx";
+import GrantAccess from "./pages/GrantAccess.jsx";
 
 //popups
 import CreateFolderPopup from "./components/CreateFolderPopup.jsx";
@@ -34,6 +35,7 @@ function App() {
             <Route path="/workspace/:id" element={<Workspace />} />
             <Route path="/fill/form/:id" element={<FormFill />} />
             <Route path="/responses/:id" element={<Responses />} />
+            <Route path="/grant/access/:token" element={<GrantAccess />} />
           </Routes>
           <CreateFolderPopup />
           <CreateFormPopup />

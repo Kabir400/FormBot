@@ -35,17 +35,21 @@ function DashboardForm() {
           onClick={() => navigate(`/workspace/${item._id}`)}
         >
           <p className={style.formText}>{item.title}</p>
-          <img
-            src={remove}
-            className={style.removeImg}
-            onClick={() =>
-              setUtility({
-                ...utility,
-                DeleteFormPopup: true,
-                DeleteFormId: item._id,
-              })
-            }
-          />
+
+          {data.clickedDashboard.isEditable && (
+            <img
+              src={remove}
+              className={style.removeImg}
+              onClick={(e) => {
+                e.stopPropagation();
+                setUtility({
+                  ...utility,
+                  DeleteFormPopup: true,
+                  DeleteFormId: item._id,
+                });
+              }}
+            />
+          )}
         </div>
       ))}
     </div>

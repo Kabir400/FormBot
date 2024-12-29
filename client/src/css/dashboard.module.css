@@ -38,7 +38,14 @@
   padding: 10px;
   padding-right: 20px;
   align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
+.dropdownBox :hover {
+  transform: scale(1.05);
+  background-color: #ffffff29;
+}
+
 .dropdownArrow {
   width: 10px;
   height: 10px;
@@ -63,6 +70,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: background-color 0.3s ease, transform 0.2s ease,
+    box-shadow 0.3s ease;
+}
+
+.share:hover {
+  background-color: #004bcc;
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .themeContainer {

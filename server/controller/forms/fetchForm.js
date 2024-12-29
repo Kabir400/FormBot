@@ -39,10 +39,9 @@ const fetchForm = TryCatch(async (req, res, next) => {
   }
 
   // Check if the user has access to the form
-  const user = await userModel.findById(userId);
+  const user = await userModel.findById(form.userID);
   const hasAccess = user.assignedUsers.some(
-    (assignedUser) =>
-      assignedUser.assignedUser.toString() === form.userID.toString()
+    (assignedUser) => assignedUser.assignedUser.toString() === userId.toString()
   );
 
   if (!hasAccess) {

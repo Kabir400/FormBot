@@ -15,6 +15,7 @@ import { utilityContext, dataContext } from "./Store.jsx";
 import { useContext, useState } from "react";
 import getRequest from "../utils/getRequest.js";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 function DashboardNav() {
   const [utility, setUtility] = useContext(utilityContext);
@@ -25,31 +26,56 @@ function DashboardNav() {
   const navigate = useNavigate();
 
   //change dashboard---------------------------
-  const changeDashboard = (item) => {
-    const result = getRequest(`${base_url}/others/${item.id}`);
+  const changeDashboard = async (item) => {
+    const loadingToastId = toast.loading("Loading...", {
+      position: "top-right",
+      autoClose: false, // Keep it open until explicitly dismissed
+    });
 
-    if (result.suceess === true) {
-      const forms = result.data.forms.filter((form) => form.folderId === null);
+    try {
+      const result = await getRequest(`${base_url}/others/${item.id}`);
 
-      setData({
-        ...data,
-        folders: result.data.folders,
-        forms: result.data.forms,
-        filterdForms: forms,
-      });
+      if (result.suceess === true) {
+        const forms = result.data.forms.filter(
+          (form) => form.folderId === null
+        );
+        console.log(item);
+        setData({
+          ...data,
+          folders: result.data.folders,
+          forms: result.data.forms,
+          filterdForms: forms,
+          clickedDashboard: item,
+        });
+        setIsDropdownOpen(false);
 
-      setData({ ...data, clickedDashboard: item });
-    } else {
-      if (result.status === 401) {
-        navigate("/login");
+        toast.update(loadingToastId, {
+          render: "Dashboard updated successfully!",
+          type: "success",
+          isLoading: false,
+          autoClose: 3000, // Close after 3 seconds
+        });
+      } else {
+        if (result.status === 401) {
+          navigate("/login");
+        }
+
+        toast.update(loadingToastId, {
+          render: result.message,
+          type: "error",
+          isLoading: false,
+          autoClose: 3000, // Close after 3 seconds
+        });
       }
-      toast.error(result.message, {
-        position: "top-right",
-        autoClose: 3000,
+    } catch (error) {
+      toast.update(loadingToastId, {
+        render: "An error occurred while loading.",
+        type: "error",
+        isLoading: false,
+        autoClose: 3000, // Close after 3 seconds
       });
     }
   };
-
   //-------------------------------------------
 
   useEffect(() => {
@@ -149,16 +175,19 @@ function DashboardNav() {
         {/* -------dropdown ends here--------- */}
         <div className={style.navBoxRight}>
           <Theme />
-          <div
-            className={`${style.share} ${
-              utility.theme === "light" && "whiteText"
-            }`}
-            onClick={() => {
-              setUtility({ ...utility, sharePopup: true });
-            }}
-          >
-            Share
-          </div>
+
+          {data.clickedDashboard.isOwner && (
+            <div
+              className={`${style.share} ${
+                utility.theme === "light" && "whiteText"
+              }`}
+              onClick={() => {
+                setUtility({ ...utility, sharePopup: true });
+              }}
+            >
+              Share
+            </div>
+          )}
         </div>
       </div>
     </div>

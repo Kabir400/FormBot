@@ -12,10 +12,14 @@ const assignedUser = TryCatch(async (req, res, next) => {
     return next(new ApiError(400, "Email and isEditable are required"));
   }
 
+  if (email === req.user.email) {
+    return next(new ApiError(400, "You cannot assign yourself"));
+  }
+
   // Find the user to assign based on email
   const userToAssign = await userModel.findOne({ email });
   if (!userToAssign) {
-    return next(new ApiError(404, "User to assign not found"));
+    return next(new ApiError(404, "Invalid email"));
   }
 
   // Get the logged-in user's info from req.user

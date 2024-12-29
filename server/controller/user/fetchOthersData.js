@@ -3,6 +3,7 @@ const TryCatch = require("../../utils/TryCatch.js");
 
 const folderModel = require("../../model/folder.model.js");
 const formModel = require("../../model/form.model.js");
+const userModel = require("../../model/user.model.js");
 
 const fetchOthersData = TryCatch(async (req, res, next) => {
   const { _id: userID } = req.user;
@@ -19,15 +20,15 @@ const fetchOthersData = TryCatch(async (req, res, next) => {
       (assignedUser) =>
         assignedUser.assignedUser.toString() === userID.toString()
     ) &&
-    userId.toString() != id.toString()
+    userID.toString() != id.toString()
   ) {
     return next(
       new ApiError(403, "You do not have permission to view this user")
     );
   }
-  const folders = (await folderModel.find({ id })) || [];
+  const folders = (await folderModel.find({ userID: id })) || [];
 
-  const forms = (await formModel.find({ id })) || [];
+  const forms = (await formModel.find({ userID: id })) || [];
 
   const apiResponse = new ApiResponse(
     200,

@@ -53,17 +53,21 @@ function DashboardFolder() {
           >
             {item.title}
           </p>
-          <img
-            src={remove}
-            className={style.folderRemove}
-            onClick={() => {
-              setUtility({
-                ...utility,
-                DeleteFolderPopup: true,
-                DeleteFolderId: item._id,
-              });
-            }}
-          />
+
+          {data.clickedDashboard.isEditable && (
+            <img
+              src={remove}
+              className={style.folderRemove}
+              onClick={(e) => {
+                e.stopPropagation();
+                setUtility({
+                  ...utility,
+                  DeleteFolderPopup: true,
+                  DeleteFolderId: item._id,
+                });
+              }}
+            />
+          )}
         </div>
       ))}
     </div>

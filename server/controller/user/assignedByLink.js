@@ -3,6 +3,7 @@ const ApiError = require("../../utils/ApiError.js");
 const TryCatch = require("../../utils/TryCatch.js");
 
 const userModel = require("../../model/user.model.js");
+const jwt = require("jsonwebtoken");
 
 const assignedUser = TryCatch(async (req, res, next) => {
   const { token } = req.params;
@@ -10,8 +11,17 @@ const assignedUser = TryCatch(async (req, res, next) => {
   if (!token) {
     return next(new ApiError(400, "Token is required"));
   }
+  let decoded;
+  try {
+    decoded = jwt.verify(token, process.env.TOKEN_SECRET_KEY);
+  } catch (err) {
+    return next(new ApiError(400, "Invalid link"));
+  }
+  const { _id, isEditable } = decoded;
 
-  const { _id, isEditable } = jwt.verify(token, process.env.TOKEN_SECRET_KEY);
+  if (_id.toString() === req.user._id.toString()) {
+    return next(new ApiError(400, "You cannot assign yourself"));
+  }
 
   const user = await userModel.findById(_id);
   if (!user) {
@@ -38,7 +48,7 @@ const assignedUser = TryCatch(async (req, res, next) => {
 
   // Create response
   const apiresponse = new ApiResponse(200, "User assigned successfully", true, {
-    assignedUser: userToAssign.email,
+    assignedUser: req.user._id,
     isEditable,
   });
 
