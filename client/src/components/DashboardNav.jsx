@@ -78,6 +78,19 @@ function DashboardNav() {
   };
   //-------------------------------------------
 
+  const optionHandler = (index) => {
+    if (index === 0) {
+      navigate("/settings");
+    } else if (index === 1) {
+      localStorage.removeItem("authToken");
+      navigate("/login");
+      toast.success("Logout Successfully", {
+        position: "top-right",
+        autoClose: 3000,
+      });
+    }
+  };
+
   useEffect(() => {
     (async () => {
       const result = await getRequest(`${base_url}/dashboards`);
@@ -125,7 +138,7 @@ function DashboardNav() {
               src={bottomArrow}
               className={`${style.dropdownArrow} ${
                 utility.theme === "light" && "convertDark"
-              }`}
+              } ${isDropdownOpen && "rotateArrow"}`}
             />
           </div>
           {/* -------other dashboards--------- */}
@@ -156,16 +169,17 @@ function DashboardNav() {
           {/* -------options--------- */}
 
           {isDropdownOpen &&
-            [...optionList].map((item, index) => (
+            optionList.map((item, index) => (
               <div
                 className={style.dropdownBox}
                 key={index}
                 style={{ borderTop: " 1px solid #ffffff29" }}
+                onClick={() => optionHandler(index)}
               >
                 <p
                   className={`${style.dropdownText} ${
                     utility.theme === "light" && "darkText"
-                  }`}
+                  } ${index === 1 && "logoutColor"}`}
                 >
                   {item}
                 </p>

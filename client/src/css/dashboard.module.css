@@ -49,11 +49,13 @@
 .dropdownArrow {
   width: 10px;
   height: 10px;
+  transition: all 0.3s ease;
 }
 .dropdownText {
   color: #ffffffeb;
   font-size: 14px;
   font-family: "Open Sans", sans-serif;
+  transition: all 0.3s ease;
 }
 .navBoxRight {
   display: flex;

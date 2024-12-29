@@ -101,7 +101,12 @@ function SharePopup() {
 
   return (
     <div onClick={closePopup} className={style.container}>
-      <div className={style.box} onClick={(e) => e.stopPropagation()}>
+      <div
+        className={`${style.box} ${
+          utility.theme === "light" && "whiteBg darkText darkBorder"
+        }`}
+        onClick={(e) => e.stopPropagation()}
+      >
         <div className={style.middleBox}>
           <div className={style.textContainer}>
             <p className={style.text}>Invite by Email</p>
@@ -110,7 +115,13 @@ function SharePopup() {
               onClick={() => setIsDropdownOpen(!isDropdownOpen)}
             >
               <p className={style.dropdownText}>{dropdownText}</p>
-              <img src={dropdownArrow} alt="dropdownArrow" />
+              <img
+                src={dropdownArrow}
+                className={`${style.dropdownArrow} ${
+                  isDropdownOpen && "rotateArrow"
+                } ${utility.theme === "light" && "convertDark"}`}
+                alt="dropdownArrow"
+              />
 
               {isDropdownOpen && (
                 <div className={style.dropdown}>
@@ -141,18 +152,37 @@ function SharePopup() {
             type="text"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className={style.input}
+            className={`${style.input} ${
+              utility.theme === "light" && "lightInput"
+            }`}
             placeholder="Enter email id"
           />
-          <div className={style.btn} onClick={shareByEmail}>
+          <div
+            className={`${style.btn}  ${
+              utility.theme === "light" && "whiteText"
+            }`}
+            onClick={shareByEmail}
+          >
             {isEmailPending ? "Loading..." : "Send Invite"}
           </div>
 
           <p className={style.text}>Invite by link</p>
-          <div className={style.btn} onClick={shareByLink}>
+          <div
+            className={`${style.btn}  ${
+              utility.theme === "light" && "whiteText"
+            }`}
+            onClick={shareByLink}
+          >
             {isLinkPending ? "Loading..." : "Copy link"}
           </div>
         </div>
+
+        <img
+          src={close}
+          className={style.close}
+          alt="close"
+          onClick={closePopup}
+        />
       </div>
     </div>
   );

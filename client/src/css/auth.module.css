@@ -139,3 +139,14 @@
 .dangerInput:focus {
   border: 1px solid #ff272780 !important;
 }
+.backarrow {
+  position: absolute;
+  top: 37px;
+  left: 33px;
+  width: 16px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.backarrow:hover {
+  transform: scale(1.1);
+}

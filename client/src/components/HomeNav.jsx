@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 //assets-
 import logo from "../assets/logo.png";
@@ -7,6 +8,8 @@ import logo from "../assets/logo.png";
 import style from "../css/home.module.css";
 
 function HomeNav() {
+  const navigate = useNavigate();
+
   return (
     <div className={style.navContainer}>
       <div className={style.logoContainer}>
@@ -15,8 +18,20 @@ function HomeNav() {
       </div>
 
       <div className={style.navBtnContainer}>
-        <div className={style.signin}>Sign In</div>
-        <div className={style.createForm}>Create a FormBot</div>
+        <div
+          className={style.signin}
+          onClick={() => {
+            navigate("/login");
+          }}
+        >
+          Sign In
+        </div>
+        <div
+          className={style.createForm}
+          onClick={() => navigate("/dashboard")}
+        >
+          Create a FormBot
+        </div>
       </div>
     </div>
   );

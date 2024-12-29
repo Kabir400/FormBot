@@ -71,7 +71,15 @@
   cursor: pointer;
   height: 45px;
   display: flex;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
+
+.sendBox:hover {
+  background: #144bcc;
+  transform: scale(1.05);
+}
+
 .datePicker {
   box-shadow: 0px 4px 6.3px 0px #00000040;
   border-radius: 5px;
@@ -157,4 +165,35 @@
 
 .disabledInputText:-moz-placeholder {
   color: white; /* Firefox 18- */
+}
+
+@media screen and (max-width: 850px) {
+  .box {
+    width: 87vw;
+  }
+}
+@media screen and (max-width: 600px) {
+  .box {
+    width: 95vw;
+  }
+  .avater {
+    width: 48px;
+  }
+  .bubbleText {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 420px) {
+  .inputText {
+    width: 193px;
+  }
+  .sendBox {
+    height: 41px;
+  }
+  .ratingBox {
+    width: 193px;
+  }
+  .datePicker {
+    width: 193px;
+  }
 }

@@ -70,6 +70,7 @@ function LoginForm() {
             type="password"
             name="password"
             id="password"
+            placeholder="Enter your password"
             className={style.input}
           />
         </div>

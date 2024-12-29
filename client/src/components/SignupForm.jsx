@@ -100,6 +100,7 @@ function SignupForm() {
             type="password"
             name="password"
             id="password"
+            placeholder="Enter your password"
             className={style.input}
           />
         </div>
@@ -115,6 +116,7 @@ function SignupForm() {
             name="confirmPassword"
             type="password"
             id="confirmPassword"
+            placeholder="Enter confirm password"
             className={`${style.input} ${error && style.dangerInput}`}
           />
           <p

@@ -64,6 +64,9 @@
 .lightGrayBg {
   background: #575759 !important;
 }
+.logoutColor {
+  color: #ffa54c !important;
+}
 /* .grayInputBg {
   background: #777777 !important;
   box-shadow: 0px 4px 6.3px 0px #00000040;
@@ -75,4 +78,8 @@
 .convertBlue {
   filter: invert(31%) sepia(97%) saturate(3185%) hue-rotate(169deg)
     brightness(94%) contrast(101%);
+}
+
+.rotateArrow {
+  transform: rotate(180deg);
 }

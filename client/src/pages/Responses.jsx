@@ -23,6 +23,7 @@ function Responses() {
   const [responseData, setResponseData] = useState([]);
   const [form, setForm] = useState({});
   const [isPending, setIsPending] = useState(false);
+  const [isResponse, setIsResponse] = useState(true);
   const [utility, setUtility] = useContext(utilityContext);
 
   useEffect(() => {
@@ -32,10 +33,16 @@ function Responses() {
 
       if (result.suceess === true) {
         setIsPending(false);
+
+        if (result.data.responses.length === 0) {
+          setIsResponse(false);
+        }
+
         setResponseData(result.data.responses);
         setForm(result.data.form);
       } else {
         setIsPending(false);
+        setIsResponse(false);
         if (result.status === 401) {
           navigate("/login");
         }
@@ -66,25 +73,36 @@ function Responses() {
       }`}
     >
       <ResponseNav />
-      <div className={style.statsContainer}>
-        <Stats title="Views" value={form?.views} />
-        <Stats title="Starts" value={form?.starts} />
-      </div>
-      <div className={style.tableContainer}>
-        <Table responseData={responseData} />
-      </div>
-      <div className={style.chartContainer}>
-        <Chart starts={form?.starts} completed={form?.completed} />
-        <Stats
-          title={"Completion rate"}
-          value={Math.floor((form?.completed / form?.starts) * 100) + "%"}
-        />
 
-        <div className={style.chartCompletedBox}>
-          <p className={style.chartCompletedText}>Completed</p>
-          <p className={style.chartCompletedText}>{form?.completed}</p>
-        </div>
-      </div>
+      {isResponse ? (
+        <>
+          <div className={style.statsContainer}>
+            <Stats title="Views" value={form?.views} />
+            <Stats title="Starts" value={form?.starts} />
+          </div>
+          <div className={style.tableContainer}>
+            <Table responseData={responseData} />
+          </div>
+          <div className={style.chartContainer}>
+            <Chart starts={form?.starts} completed={form?.completed} />
+            <Stats
+              title={"Completion rate"}
+              value={Math.floor((form?.completed / form?.starts) * 100) + "%"}
+            />
+
+            <div className={style.chartCompletedBox}>
+              <p className={style.chartCompletedText}>Completed</p>
+              <p className={style.chartCompletedText}>{form?.completed}</p>
+            </div>
+          </div>
+        </>
+      ) : (
+        <>
+          <div className={style.noResponseContainer}>
+            <p className={style.noResponseText}>No Response yet collected</p>
+          </div>
+        </>
+      )}
     </div>
   );
 }

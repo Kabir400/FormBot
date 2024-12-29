@@ -1,0 +1,86 @@
+.container {
+  background: #1f1f23;
+  min-height: 100vh;
+  min-width: 100vw;
+  color: white;
+}
+
+.box {
+  width: 500px;
+  margin: auto;
+  padding-top: 60px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.body {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 30px;
+}
+.heading {
+  font-family: "Open Sans", sans-serif;
+  font-size: 21px;
+}
+
+.inputBox {
+  position: relative;
+  width: 100%;
+}
+.input {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+  border-radius: 11.03px;
+  border: 1.38px solid #d0d0d0;
+  color: #828282;
+  background-color: #1f1f23;
+  padding-left: 39px;
+  font-family: "Open Sans", sans-serif;
+}
+.input:focus {
+  outline: none;
+}
+.profile {
+  position: absolute;
+  width: 24px;
+  top: 21%;
+  left: 6px;
+}
+
+.btn {
+  font-family: "Open Sans", sans-serif;
+  background: #1a5fff;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 55.13px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+}
+.btn:hover {
+  background: #144bcc;
+}
+
+.logoutContainer {
+  display: flex;
+  position: absolute;
+  gap: 10px;
+  bottom: 52px;
+  left: 46px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.logoutText {
+  color: #cf3636;
+}
+.logoutContainer:hover {
+  transform: scale(1.1);
+}

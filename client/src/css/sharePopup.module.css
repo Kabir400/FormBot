@@ -17,6 +17,7 @@
   background: #18181b;
   border-radius: 24px;
   padding-bottom: 40px;
+  position: relative;
   animation: slideDown 0.3s ease-out;
 }
 .middleBox {
@@ -45,6 +46,7 @@
   font-size: 11px;
   font-family: "Open Sans", sans-serif;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 .dropdownText2 {
   font-size: 13px;
@@ -52,6 +54,9 @@
   padding-bottom: 2px;
   transform: all 0.3s ease;
   cursor: pointer;
+}
+.dropdownArrow {
+  transition: all 0.3s ease;
 }
 .dropdownText2:hover,
 .dropdownText:hover {
@@ -94,6 +99,19 @@
 .btn:hover {
   background: #144bcc;
   transform: scale(1.05);
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.close:hover {
+  transform: scale(1.1);
 }
 
 @keyframes slideDown {

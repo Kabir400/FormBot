@@ -23,8 +23,12 @@ app.use("/api/v1", require("./router/form.router.js"));
 app.use((err, req, res, next) => {
   const status = err.status || 500;
   const suceess = err.suceess || false;
-  const message = err.message || "something went wrong";
+  let message = err.message || "something went wrong";
   const data = err.data || null;
+
+  if (err.code === 11000) {
+    message = "Email already exists";
+  }
   res.status(status).json({
     status,
     message,
