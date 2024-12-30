@@ -25,10 +25,10 @@ const updateForm = TryCatch(async (req, res, next) => {
   }
 
   // Check if the user has edit access to the form
-  const user = await userModel.findById(userId);
+  const user = await userModel.findById(form.userID);
   const hasEditAccess = user.assignedUsers.some(
     (assignedUser) =>
-      assignedUser.assignedUser.toString() === form.userID.toString() &&
+      assignedUser.assignedUser.toString() === userId.toString() &&
       assignedUser.isEditable
   );
 
