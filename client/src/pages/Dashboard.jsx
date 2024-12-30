@@ -38,6 +38,7 @@ function Dashboard() {
           folders: result.data.folders,
           forms: result.data.forms,
           filterdForms: forms,
+          selectedFolderId: null,
         });
       } else {
         setIsPending(false);
