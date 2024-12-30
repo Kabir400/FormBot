@@ -1,10 +1,11 @@
 //base url-
 const base_url = import.meta.env.VITE_BASE_URL;
 
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import postRequest from "../utils/postRequest.js";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import { utilityContext } from "../components/Store.jsx";
 
 //css-
 import style from "../css/settings.module.css";
@@ -21,6 +22,7 @@ function Settings() {
     oldPassword: "",
     newPassword: "",
   });
+  const [utility, setUtility] = useContext(utilityContext);
   const [isPending, setIsPending] = useState(false);
   const navigate = useNavigate();
 
@@ -63,7 +65,11 @@ function Settings() {
     });
   };
   return (
-    <div className={style.container}>
+    <div
+      className={`${style.container} ${
+        utility.theme === "light" && "whiteBg darkText"
+      }`}
+    >
       <div className={style.box}>
         <p className={style.heading}>Settings</p>
         <div className={style.body}>
@@ -72,7 +78,9 @@ function Settings() {
             <input
               type="text"
               placeholder="Name"
-              className={style.input}
+              className={`${style.input} ${
+                utility.theme === "light" && "lightInput"
+              }`}
               value={data.name}
               onChange={(e) => setData({ ...data, name: e.target.value })}
             />
@@ -82,7 +90,9 @@ function Settings() {
             <input
               type="text"
               placeholder="Update Email"
-              className={style.input}
+              className={`${style.input} ${
+                utility.theme === "light" && "lightInput"
+              }`}
               value={data.email}
               onChange={(e) => setData({ ...data, email: e.target.value })}
             />
@@ -92,7 +102,9 @@ function Settings() {
             <input
               type="text"
               placeholder="Old Password"
-              className={style.input}
+              className={`${style.input} ${
+                utility.theme === "light" && "lightInput"
+              }`}
               value={data.oldPassword}
               onChange={(e) =>
                 setData({ ...data, oldPassword: e.target.value })
@@ -104,7 +116,9 @@ function Settings() {
             <input
               type="text"
               placeholder="New Password"
-              className={style.input}
+              className={`${style.input} ${
+                utility.theme === "light" && "lightInput"
+              }`}
               value={data.newPassword}
               onChange={(e) =>
                 setData({ ...data, newPassword: e.target.value })
@@ -113,7 +127,10 @@ function Settings() {
           </div>
         </div>
 
-        <div className={style.btn} onClick={submitHandler}>
+        <div
+          className={`${style.btn} ${utility.theme === "light" && "whiteText"}`}
+          onClick={submitHandler}
+        >
           {isPending ? "Loading..." : "Update"}
         </div>
       </div>
