@@ -39,7 +39,7 @@ const updateForm = TryCatch(async (req, res, next) => {
   }
 
   // Allow update for users with edit permissions
-  return updateFormContent(form, content, res, next, theme);
+  return updateFormContent(form, content, title, res, next, theme);
 });
 
 // Helper function to update form content
